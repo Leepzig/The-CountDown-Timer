@@ -2,7 +2,7 @@
 
 
 
-//there is a bug with 'cannot read date of undefined' will troubleshoot later to fix it.
+//there is a bug with 'cannot read date of undefined' in line 14/15 will troubleshoot later to fix it.
 //function to loop through localStorage and append data to table
 function appendRowsloop() {
   var row = document.createElement('tr')

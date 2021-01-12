@@ -1,3 +1,5 @@
+//import TimerControls from TimerControls.js;
+
 
 //used to display the time with zeros if less than 10
 function addZeroIfLess10(num) {
@@ -35,7 +37,7 @@ class Timer {
     var minutes = Math.floor(this.timeInSeconds/60) % 60;
     var seconds = this.timeInSeconds % 60;
     var countDown = `${addZeroIfLess10(hours)}:${addZeroIfLess10(minutes)}:${addZeroIfLess10(seconds)}`;
-    document.getElementById("container").innerHTML = countDown;
+    document.querySelector("#" + this.name).innerText = countDown;
     this.timeInSeconds--;
     localStorage['last_time'] = this.timeInSeconds;
     this.congratMessag()
@@ -87,11 +89,50 @@ class Timer {
 
 }
 
-var codingTimer = new Timer(20, 'codingTimer')
 
+class TimerControls {
+  constructor(clock = new Timer) {
+      this.name = clock.name;
+      this.startTimer = clock.startTimer();
+      this.stopTimer = clock.stopTimer();
+      this.resetTimer = clock.resetTimer();
+  }
 
+  renderButton(text, func, element) {
+      var node = document.createTextNode(text)
+      var button = document.createElement('button')
+      button.addEventListener('click', func)
+      button.appendChild(node)
+      element.appendChild(button)
+  }
+
+  renderDivWClass(cls, element, createElement) {
+      var div = document.createElement(createElement)
+      div.classList.add(cls)
+      element.appendChild(div)
+      return div
+  }
+
+  renderClock() {
+      var clocks = document.querySelector('.clocks')
+      var div = this.renderDivWClass('clock-container', clocks, 'div')
+      var h2 = this.renderDivWClass('timer-title', div, 'h2')
+      var h2Node = document.createTextNode(this.name)
+      h2.appendChild(h2Node)
+      this.renderDivWClass('clock', div, 'div')
+      var controls = this.renderDivWClass('controls', div, 'div')
+      this.renderButton('Start Timer',this.startTimer,controls )
+      this.renderButton('Stop Timer',this.stopTimer, controls )
+      //this.renderButton('Reset Timer',this.resetTimer, controls )
+  }
+
+  
+}
+codingTimer = new Timer
 // THE FUTURE:
-// var eggTimer = new Timer('egg', 4)
-// var eggControls = new TimerControls(eggTimer)
-// var codeTimer = new Timer('egg', 20)
-// var codeControls = new TimerControls(codeTimer)
+var eggTimer = new Timer(4, 'Egg Timer')
+var eggControls = new TimerControls(eggTimer)
+eggControls.renderClock()
+var codeTimer = new Timer(20, 'Biking')
+var codeControls = new TimerControls(codeTimer)
+codeControls.renderClock()

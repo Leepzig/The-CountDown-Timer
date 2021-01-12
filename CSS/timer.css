@@ -28,29 +28,47 @@
 body {
   background: azure;
 }
-#container {
+.clocks {
+  display: flex;
+  justify-content: center;
+}
+.clock-container{
+  display:;
+  border: solid silver;
+}
+.clock {
   margin-left: auto;
   margin-right: auto;
   display: flex;
   border: 5px solid black;
-  width: 500px;
-  height: 200px;
+  width: 350px;
+  height: 125px;
   background: grey;
-  font-size: 130px;
+  font-size: 80px;
   align-content: center;
   justify-content: center;
 }
 
-#button-container {
+.timer-title {
+  display: flex;
+  justify-content: center;
+}
+
+.controls {
 display:flex;
 justify-content:center;
 align-items: center;
+padding: 15px;
 }
 
 button {
-  font-size: 18px;
-  line-height: 1.5;
-  width: 15%;;
+  font-size: 15px;
+  line-height: 1.25;
+  width: 25%;;
+}
+
+.button-container {
+  margin-top: 20px;
 }
 
 .block {

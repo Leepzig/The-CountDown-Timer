@@ -10,15 +10,26 @@
     <a href="display_records.html">Timer Records</a>
     <a href="#contact">Contact</a>
   </div>
-  <div class="block">
-    <p id = container></p>
-    
-  </div>
-  <div id="button-container">
-    <button onclick="codingTimer.startTimer()">Start Timer</button>
-    <button onclick="codingTimer.stopTimer()">Stop Timer</button>
-    <button onclick="codingTimer.resetTimer()">Reset Timer</button>
+  <div class = "clocks">
+    <div class = "clock-container">
+      <h2 class = "timer-title">Timer Name</h2>
+        <div class = "clock" id = "codingTimer"></div>
+      <div class="controls">
+        <button onclick="codingTimer.startTimer()">Start Timer</button>
+        <button onclick="codingTimer.stopTimer()">Stop Timer</button>
+        <button onclick="codingTimer.resetTimer()">Reset Timer</button>
+      </div>
+    </div>
   </div>
 </body>
 <script src="./js/timer.js"></script>
 </html>
+
+<div>
+  <div>
+    clock
+  </div>
+  <div>
+    buttons
+  </div>
+</div>
