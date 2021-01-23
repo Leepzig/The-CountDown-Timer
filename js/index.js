@@ -1,47 +1,28 @@
 /*
 TODO
-think of a way to remove last_time from table
+-Create an Add Timer button
+-Create an add Timer form
+-add the feature to put minutes instead of hours
+      -make a minute timer and an hour timer a sub class of super Timer?
+-Fix timerControls class: -start button is not recieving the function
+      -reorganize renderClock() to be more readable
+-add a note class
+-make note subclass : todoList
+- Emerson mentioned that I was updating the HTML directly every second, how can I change that?
 
-make display for loop better/more readable
+BUGS:
+-erase function works when called in console, but when button is pressed throws error, cannot .remove() of null
+-display function not working
+-buttons are recieving the start/stop functions but not actually starting/stopping the time. because timerRunning = undefined
+-recordtime is not registering as a function on the stoptime()
+-impossible to reset the timer if the timer hits 0
 
-change the key in localstorage to something better and more readable
-
-make timer into a class O.O
-along with making a timer a class make it possible to have multiple timers
-
-localStorage {timerName:
-  [
-    {1:
-      {date:1/9/21,
-      duration: 5mins,
-      reason: testing},
-    2: {
-      date: 4555,
-      duration: 555,
-      reason: testing
-    }
-    }
-  ]
-}
-localStorage['timerName'] = JSON.stringify([ {1: {date: '1/9/21', duration: 5, reason: testing}, 2:{date: 54, duration: 55, reason: lots}}])
-var string = JSON.parse(localStorage['timerName'])
-
-string[0]['1']["date"]
-
-
+DEBUGGED:
+-every refresh it executes the stop time function
+-the new timer HTML is getting overwritten with the timer when the start timer funciton runs
 
 DONE
-fix resetTimer()
-put in a nav bar
-add a celebration when the timer hits 0
-upload everything to GIT
-automate creation of table rows with new data
-make table
-start time records time localeStorage["start_time"] = 4444
-stop time records time  localeStorage["stop_time"] = 4444
-stop time - start time = time elapsed working
-localeStorage["time_working"] = stop time - start time
-alert input box? Why? = answer
+
 
 */
 

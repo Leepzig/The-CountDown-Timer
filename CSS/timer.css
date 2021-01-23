@@ -12,6 +12,7 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  cursor: pointer;
 }
 
 /* Changes the color of links on hover */
@@ -33,7 +34,6 @@ body {
   justify-content: center;
 }
 .clock-container{
-  display:;
   border: solid silver;
 }
 .clock {
@@ -57,7 +57,6 @@ body {
 .controls {
 display:flex;
 justify-content:center;
-align-items: center;
 padding: 15px;
 }
 
@@ -92,4 +91,19 @@ td, th {
 
 tr:nth-child(even) {
   background-color: #dddddd;
+}
+
+.note {
+  border:solid slategray;
+  width: 400px;
+  height: 400px;
+
+}
+
+.note-title{
+  color:snow;
+  background-color: steelblue;
+  font-size: 26px;
+  padding: 10px;
+  margin-top: 0px;
 }
